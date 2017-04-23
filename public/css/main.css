@@ -1,0 +1,19 @@
+#mainContainer {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+#empHeading {
+    margin-bottom: 0;
+    margin-top: 0;
+}
+
+#addEmp {
+    margin-left: auto;
+
+}
+
+#addEmp a {
+    color: #FFFFFF;
+    text-decoration: none;
+}
