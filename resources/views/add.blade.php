@@ -20,6 +20,7 @@
         <title>Shifty API - Add an employee</title>
 
         <link rel="stylesheet" href="css/app.css">
+        <link rel="stylesheet" href="css/main.css">
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
 
     </head>
@@ -29,10 +30,17 @@
             <nav class="navbar navbar-default">
                 <div class="container-fluid">
                     <div class="navbar-header">
-                        <a class="navbar-brand" href="/">Employee Shift table</a>
+                        <a class="navbar-brand" href="">Employee Shift table</a>
+                        <div class="navbar-nav">
+                            <a class="nav-item nav-link custNavItem" href="/">Home</a>
+                            <span id="currPage" class="nav-item active custNavItem">Add Employee</span>
+                            <a class="nav-item nav-link custNavItem" href="week">Weekly plan</a>
+                        </div>
                     </div>
                 </div>
             </nav>
+
+            <a id="backButton" href="/"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span> Back</a>
 
             <adding></adding>
 

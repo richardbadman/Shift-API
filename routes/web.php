@@ -15,12 +15,12 @@ Route::get('/', function () {
     return view('main');
 });
 
-// Route::get('test', function() {
-//     return view('testing');
-// });
-
 Route::get('add', function() {
     return view('add');
+});
+
+Route::get('week', function() {
+    return view('week');
 });
 
 Route::resource('employee', 'EmployeeController');

@@ -83,7 +83,7 @@ export default {
                 console.log(response.data);
             })
 
-            vm.$forceUpdate();
+            this.getEmployees();
 
         }
     }

@@ -7,14 +7,20 @@
                 <h2>Add an Employee</h2>
                 <div class="panel panel-default">
                     <div id="addPanel" class="panel-body">
-                        <h4>First Name</h4>
-                        <input type="text" placeholder="Enter in Employee's first name..." v-model="firstName">
-                        <h4>Last Name</h4>
-                        <input type="text" placeholder="Enter in Employee's last name..." v-model="lastName">
+                            <div class="alert alert-success" v-if="successDisp">
+                                <span class="glyphicon glyphicon-ok" aria-hidden="true"></span> Successfully added employee!
+                            </div>
+                            <div class="alert alert-danger" v-if="failedDisp">
+                                <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span> There was an error adding the employee, please revise...
+                            </div>
+                            <h4>First Name</h4>
+                            <input type="text" placeholder="Enter in Employee's first name..." v-model="firstName">
+                            <h4>Last Name</h4>
+                            <input type="text" placeholder="Enter in Employee's last name..." v-model="lastName">
 
-                        <button id="adding" class="btn btn-primary" @click="addEmp">
-                            <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Add Employee
-                        </button>
+                            <button id="adding" class="btn btn-primary" @click="addEmp">
+                                <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Add Employee
+                            </button>
                     </div>
                 </div>
             </div>
@@ -31,12 +37,22 @@ export default {
         return {
             firstName: '',
             lastName: '',
+            successDisp: false,
+            failedDisp: false,
+            check: false,
         }
     },
 
     methods: {
 
+        mounted() {
+            //reset when page is refreshed/loaded
+            this.successDisp = false;
+            this.failedDisp = false;
+        },
+
         addEmp() {
+
             axios.post('/employee', {
                 firstName: this.firstName,
                 lastName: this.lastName,
@@ -44,10 +60,21 @@ export default {
               })
               .then(function (response) {
                 console.log(response);
-              })
+                this.successDisp = true;
+                this.failedDisp = false;
+                this.clearInputs();
+            }.bind(this))
               .catch(function (error) {
                 console.log(error);
-              });
+                this.successDisp = false;
+                this.failedDisp = true;
+            }.bind(this));
+
+        },
+
+        clearInputs() {
+            this.firstName = '';
+            this.lastName = '';
         }
 
     }

@@ -28,34 +28,33 @@
                 <div class="navbar-header">
                     <a class="navbar-brand" href="">Employee Shift table</a>
                     <div class="navbar-nav">
-                        <span id="currPage" class="nav-item active custNavItem">Home</span>
+                        <a class="nav-item nav-link custNavItem" href="/">Home</a>
                         <a class="nav-item nav-link custNavItem" href="add">Add Employee</a>
-                        <a class="nav-item nav-link custNavItem" href="week">Weekly plan</a>
+                        <span id="currPage" class="nav-item active custNavItem">Weekly plan</span>
                     </div>
                 </div>
             </div>
         </nav>
 
-        <!-- <div class="col-md-6 col-md-offset-3">
-            <div id="infoDiv">
-                Shown is a list of all Employee's, here you can view, edit and delete a selected Employee as well as add additional Employee's
-            </div>
-        </div> -->
+        <h2 id="weekHeading">Week Commencing: </h2>
 
-        <div id="mainContainer" class="container">
-            <h1 id="empHeading">Employees</h1>
-            <button id="addEmp" class="btn btn-primary">
-                <a href="add"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Add Employee</a>
-            </button>
-        </div>
-
-
-
-        <emptable></emptable>
+        <weekly></weekly>
 
     </div>
 
     {{--<script src="{{ asset('js/app.js') }}"></script>--}}
+    <script>
+        function getMonday(d) {
+            d = new Date(d);
+            var day = d.getDay(),
+            diff = d.getDate() - day + (day == 0 ? -6:1);
+            return new Date(d.setDate(diff));
+        }
+
+        var now = getMonday(new Date());
+        var format = now.toISOString().slice(0, 10);
+        document.getElementById("weekHeading").innerHTML = "Week Commencing: " + format;
+    </script>
     <script src="js/app.js" charset="utf-8"></script>
 </body>
 </html>
