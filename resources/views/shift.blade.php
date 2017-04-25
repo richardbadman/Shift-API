@@ -30,32 +30,18 @@
                     <div class="navbar-nav">
                         <a class="nav-item nav-link custNavItem" href="/">Home</a>
                         <a class="nav-item nav-link custNavItem" href="add">Add Employee</a>
-                        <a class="nav-item nav-link custNavItem" href="addShift">Add Shift</a>
-                        <span id="currPage" class="nav-item active custNavItem">Weekly plan</span>
+                        <span id="currPage" class="nav-item active custNavItem">Add Shift</span>
+                        <a class="nav-item nav-link custNavItem" href="week">Weekly Plan</a>
                     </div>
                 </div>
             </div>
         </nav>
 
-        <h2 id="weekHeading">Week Commencing: </h2>
-
-        <weekly></weekly>
+        <shifty></shifty>
 
     </div>
 
     {{--<script src="{{ asset('js/app.js') }}"></script>--}}
-    <script>
-        function getMonday(d) {
-            d = new Date(d);
-            var day = d.getDay(),
-            diff = d.getDate() - day + (day == 0 ? -6:1);
-            return new Date(d.setDate(diff));
-        }
-
-        var now = getMonday(new Date());
-        var format = now.toISOString().slice(0, 10);
-        document.getElementById("weekHeading").innerHTML = "Week Commencing: " + format;
-    </script>
     <script src="js/app.js" charset="utf-8"></script>
 </body>
 </html>

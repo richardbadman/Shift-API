@@ -11,7 +11,7 @@ class Shift extends Model
     protected $primaryKey = 'shiftID';
 
     protected $fillable = [
-        'shiftStart', 'shiftEnd', 'empID', 'created_at', 'updated_at'
+        'shiftStart', 'shiftEnd', 'startTime', 'endTime', 'empID', 'created_at', 'updated_at'
     ];
 
     public function employee()

@@ -16,6 +16,7 @@ require('./bootstrap');
 Vue.component('emptable', require('./components/EmployeeTable.vue'));
 Vue.component('adding', require('./components/Add.vue'));
 Vue.component('weekly', require('./components/Week.vue'));
+Vue.component('shifty', require('./components/Shift.vue'));
 
 const app = new Vue({
     el: '#app',

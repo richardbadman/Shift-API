@@ -30,10 +30,11 @@
             <nav class="navbar navbar-default">
                 <div class="container-fluid">
                     <div class="navbar-header">
-                        <a class="navbar-brand" href="">Employee Shift table</a>
+                        <span class="navbar-brand" href="">Employee Shift table</span>
                         <div class="navbar-nav">
                             <a class="nav-item nav-link custNavItem" href="/">Home</a>
                             <span id="currPage" class="nav-item active custNavItem">Add Employee</span>
+                            <a class="nav-item nav-link custNavItem" href="addShift">Add Shift</a>
                             <a class="nav-item nav-link custNavItem" href="week">Weekly plan</a>
                         </div>
                     </div>

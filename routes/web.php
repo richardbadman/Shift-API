@@ -23,5 +23,9 @@ Route::get('week', function() {
     return view('week');
 });
 
+Route::get('addShift', function() {
+  return view('shift');
+});
+
 Route::resource('employee', 'EmployeeController');
 Route::resource('shift', 'ShiftController');

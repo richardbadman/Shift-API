@@ -11563,6 +11563,7 @@ __webpack_require__(36);
 Vue.component('emptable', __webpack_require__(43));
 Vue.component('adding', __webpack_require__(42));
 Vue.component('weekly', __webpack_require__(44));
+Vue.component('shifty', __webpack_require__(64));
 
 var app = new Vue({
   el: '#app'
@@ -12705,7 +12706,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 lastName: ''
             }
         };
-    }
+    },
+
+    methods: {}
 });
 
 /***/ }),
@@ -15150,21 +15153,21 @@ if (typeof jQuery === 'undefined') {
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(2)();
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 /***/ }),
 /* 39 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(2)();
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n#addPanel {\n    display: -ms-grid;\n    display: grid;\n}\n#addPanel input {\n    -webkit-box-flex: 1;\n        -ms-flex: 1 auto;\n            flex: 1 auto;\n    margin-bottom: 10px;\n}\n#adding {\n    margin-top: 25px;\n}\n::-webkit-input-placeholder {\n    font-style: italic;\n    color: #A7A7A7;\n}\n::-moz-placeholder {\n    font-style: italic;\n    color: #A7A7A7;\n}\n:-ms-input-placeholder {\n    font-style: italic;\n    color: #A7A7A7;\n}\ninput:-moz-placeholder {\n    font-style: italic;\n    color: #A7A7A7;\n}\n\n", ""]);
 
 /***/ }),
 /* 40 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(2)();
-exports.push([module.i, "\n#addPanel {\n    display: -ms-grid;\n    display: grid;\n}\n#addPanel input {\n    -webkit-box-flex: 1;\n        -ms-flex: 1 auto;\n            flex: 1 auto;\n    margin-bottom: 10px;\n}\n#adding {\n    margin-top: 25px;\n}\n::-webkit-input-placeholder {\n    font-style: italic;\n    color: #A7A7A7;\n}\n::-moz-placeholder {\n    font-style: italic;\n    color: #A7A7A7;\n}\n:-ms-input-placeholder {\n    font-style: italic;\n    color: #A7A7A7;\n}\ninput:-moz-placeholder {\n    font-style: italic;\n    color: #A7A7A7;\n}\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 /***/ }),
 /* 41 */
@@ -32264,19 +32267,19 @@ exports.push([module.i, "\n#addPanel {\n    display: -ms-grid;\n    display: gri
 
 
 /* styles */
-__webpack_require__(50)
+__webpack_require__(49)
 
 var Component = __webpack_require__(4)(
   /* script */
   __webpack_require__(33),
   /* template */
-  __webpack_require__(47),
+  __webpack_require__(46),
   /* scopeId */
   null,
   /* cssModules */
   null
 )
-Component.options.__file = "/Users/richard/Documents/api/resources/assets/js/components/Add.vue"
+Component.options.__file = "/Users/richard/Documents/Shift-API/resources/assets/js/components/Add.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] Add.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -32287,9 +32290,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-781c8962", Component.options)
+    hotAPI.createRecord("data-v-5fe5bd3a", Component.options)
   } else {
-    hotAPI.reload("data-v-781c8962", Component.options)
+    hotAPI.reload("data-v-5fe5bd3a", Component.options)
   }
 })()}
 
@@ -32302,19 +32305,19 @@ module.exports = Component.exports
 
 
 /* styles */
-__webpack_require__(49)
+__webpack_require__(48)
 
 var Component = __webpack_require__(4)(
   /* script */
   __webpack_require__(34),
   /* template */
-  __webpack_require__(46),
+  __webpack_require__(45),
   /* scopeId */
   null,
   /* cssModules */
   null
 )
-Component.options.__file = "/Users/richard/Documents/api/resources/assets/js/components/EmployeeTable.vue"
+Component.options.__file = "/Users/richard/Documents/Shift-API/resources/assets/js/components/EmployeeTable.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] EmployeeTable.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -32325,9 +32328,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-61a4b96e", Component.options)
+    hotAPI.createRecord("data-v-2f3b9199", Component.options)
   } else {
-    hotAPI.reload("data-v-61a4b96e", Component.options)
+    hotAPI.reload("data-v-2f3b9199", Component.options)
   }
 })()}
 
@@ -32340,19 +32343,19 @@ module.exports = Component.exports
 
 
 /* styles */
-__webpack_require__(48)
+__webpack_require__(50)
 
 var Component = __webpack_require__(4)(
   /* script */
   __webpack_require__(35),
   /* template */
-  __webpack_require__(45),
+  __webpack_require__(47),
   /* scopeId */
   null,
   /* cssModules */
   null
 )
-Component.options.__file = "/Users/richard/Documents/api/resources/assets/js/components/Week.vue"
+Component.options.__file = "/Users/richard/Documents/Shift-API/resources/assets/js/components/Week.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] Week.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -32363,9 +32366,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-3d14fa94", Component.options)
+    hotAPI.createRecord("data-v-77fc83aa", Component.options)
   } else {
-    hotAPI.reload("data-v-3d14fa94", Component.options)
+    hotAPI.reload("data-v-77fc83aa", Component.options)
   }
 })()}
 
@@ -32374,77 +32377,6 @@ module.exports = Component.exports
 
 /***/ }),
 /* 45 */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _vm._m(0)
-},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', {
-    staticClass: "container"
-  }, [_c('div', {
-    staticClass: "col-md-12 col-md-offset-1"
-  }, [_c('div', {
-    staticClass: "col-md-2"
-  }, [_c('table', {
-    staticClass: "table table-hover panel panel-default"
-  }, [_c('thead', {
-    staticClass: "panel-heading"
-  }, [_c('tr', [_c('th', {
-    staticClass: "col-sm-3"
-  }, [_vm._v("Monday")])])]), _vm._v(" "), _c('tbody', {
-    staticClass: "panel-body"
-  }, [_c('tr', [_c('td', [_vm._v("\n                        Test\n                    ")])])])])]), _vm._v(" "), _c('div', {
-    staticClass: "col-md-2"
-  }, [_c('table', {
-    staticClass: "table table-hover panel panel-default"
-  }, [_c('thead', {
-    staticClass: "panel-heading"
-  }, [_c('tr', [_c('th', {
-    staticClass: "col-sm-3"
-  }, [_vm._v("Tuesday")])])]), _vm._v(" "), _c('tbody', {
-    staticClass: "panel-body"
-  }, [_c('tr')])])]), _vm._v(" "), _c('div', {
-    staticClass: "col-md-2"
-  }, [_c('table', {
-    staticClass: "table table-hover panel panel-default"
-  }, [_c('thead', {
-    staticClass: "panel-heading"
-  }, [_c('tr', [_c('th', {
-    staticClass: "col-sm-3"
-  }, [_vm._v("Wednesday")])])]), _vm._v(" "), _c('tbody', {
-    staticClass: "panel-body"
-  }, [_c('tr')])])]), _vm._v(" "), _c('div', {
-    staticClass: "col-md-2"
-  }, [_c('table', {
-    staticClass: "table table-hover panel panel-default"
-  }, [_c('thead', {
-    staticClass: "panel-heading"
-  }, [_c('tr', [_c('th', {
-    staticClass: "col-sm-3"
-  }, [_vm._v("Thursday")])])]), _vm._v(" "), _c('tbody', {
-    staticClass: "panel-body"
-  }, [_c('tr')])])]), _vm._v(" "), _c('div', {
-    staticClass: "col-md-2"
-  }, [_c('table', {
-    staticClass: "table table-hover panel panel-default"
-  }, [_c('thead', {
-    staticClass: "panel-heading"
-  }, [_c('tr', [_c('th', {
-    staticClass: "col-sm-3"
-  }, [_vm._v("Friday")])])]), _vm._v(" "), _c('tbody', {
-    staticClass: "panel-body"
-  }, [_c('tr')])])])])])
-}]}
-module.exports.render._withStripped = true
-if (false) {
-  module.hot.accept()
-  if (module.hot.data) {
-     require("vue-hot-reload-api").rerender("data-v-3d14fa94", module.exports)
-  }
-}
-
-/***/ }),
-/* 46 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -32509,12 +32441,12 @@ module.exports.render._withStripped = true
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-     require("vue-hot-reload-api").rerender("data-v-61a4b96e", module.exports)
+     require("vue-hot-reload-api").rerender("data-v-2f3b9199", module.exports)
   }
 }
 
 /***/ }),
-/* 47 */
+/* 46 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -32604,7 +32536,78 @@ module.exports.render._withStripped = true
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-     require("vue-hot-reload-api").rerender("data-v-781c8962", module.exports)
+     require("vue-hot-reload-api").rerender("data-v-5fe5bd3a", module.exports)
+  }
+}
+
+/***/ }),
+/* 47 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _vm._m(0)
+},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticClass: "container"
+  }, [_c('div', {
+    staticClass: "col-md-12 col-md-offset-1"
+  }, [_c('div', {
+    staticClass: "col-md-2"
+  }, [_c('table', {
+    staticClass: "table table-hover panel panel-default"
+  }, [_c('thead', {
+    staticClass: "panel-heading"
+  }, [_c('tr', [_c('th', {
+    staticClass: "col-sm-3"
+  }, [_vm._v("Monday")])])]), _vm._v(" "), _c('tbody', {
+    staticClass: "panel-body"
+  }, [_c('tr', [_c('td', [_vm._v("\n                        Test\n                    ")])])])])]), _vm._v(" "), _c('div', {
+    staticClass: "col-md-2"
+  }, [_c('table', {
+    staticClass: "table table-hover panel panel-default"
+  }, [_c('thead', {
+    staticClass: "panel-heading"
+  }, [_c('tr', [_c('th', {
+    staticClass: "col-sm-3"
+  }, [_vm._v("Tuesday")])])]), _vm._v(" "), _c('tbody', {
+    staticClass: "panel-body"
+  }, [_c('tr')])])]), _vm._v(" "), _c('div', {
+    staticClass: "col-md-2"
+  }, [_c('table', {
+    staticClass: "table table-hover panel panel-default"
+  }, [_c('thead', {
+    staticClass: "panel-heading"
+  }, [_c('tr', [_c('th', {
+    staticClass: "col-sm-3"
+  }, [_vm._v("Wednesday")])])]), _vm._v(" "), _c('tbody', {
+    staticClass: "panel-body"
+  }, [_c('tr')])])]), _vm._v(" "), _c('div', {
+    staticClass: "col-md-2"
+  }, [_c('table', {
+    staticClass: "table table-hover panel panel-default"
+  }, [_c('thead', {
+    staticClass: "panel-heading"
+  }, [_c('tr', [_c('th', {
+    staticClass: "col-sm-3"
+  }, [_vm._v("Thursday")])])]), _vm._v(" "), _c('tbody', {
+    staticClass: "panel-body"
+  }, [_c('tr')])])]), _vm._v(" "), _c('div', {
+    staticClass: "col-md-2"
+  }, [_c('table', {
+    staticClass: "table table-hover panel panel-default"
+  }, [_c('thead', {
+    staticClass: "panel-heading"
+  }, [_c('tr', [_c('th', {
+    staticClass: "col-sm-3"
+  }, [_vm._v("Friday")])])]), _vm._v(" "), _c('tbody', {
+    staticClass: "panel-body"
+  }, [_c('tr')])])])])])
+}]}
+module.exports.render._withStripped = true
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+     require("vue-hot-reload-api").rerender("data-v-77fc83aa", module.exports)
   }
 }
 
@@ -32619,13 +32622,13 @@ var content = __webpack_require__(38);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(5)("03d5eb82", content, false);
+var update = __webpack_require__(5)("6c3bcba0", content, false);
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
  if(!content.locals) {
-   module.hot.accept("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-3d14fa94!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Week.vue", function() {
-     var newContent = require("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-3d14fa94!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Week.vue");
+   module.hot.accept("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-2f3b9199!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./EmployeeTable.vue", function() {
+     var newContent = require("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-2f3b9199!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./EmployeeTable.vue");
      if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
      update(newContent);
    });
@@ -32645,13 +32648,13 @@ var content = __webpack_require__(39);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(5)("cf050552", content, false);
+var update = __webpack_require__(5)("46595599", content, false);
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
  if(!content.locals) {
-   module.hot.accept("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-61a4b96e!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./EmployeeTable.vue", function() {
-     var newContent = require("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-61a4b96e!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./EmployeeTable.vue");
+   module.hot.accept("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-5fe5bd3a!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Add.vue", function() {
+     var newContent = require("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-5fe5bd3a!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Add.vue");
      if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
      update(newContent);
    });
@@ -32671,13 +32674,13 @@ var content = __webpack_require__(40);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(5)("37d50f1a", content, false);
+var update = __webpack_require__(5)("2f9e392d", content, false);
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
  if(!content.locals) {
-   module.hot.accept("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-781c8962!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Add.vue", function() {
-     var newContent = require("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-781c8962!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Add.vue");
+   module.hot.accept("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-77fc83aa!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Week.vue", function() {
+     var newContent = require("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-77fc83aa!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Week.vue");
      if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
      update(newContent);
    });
@@ -42082,6 +42085,425 @@ module.exports = function(module) {
 __webpack_require__(13);
 module.exports = __webpack_require__(14);
 
+
+/***/ }),
+/* 55 */,
+/* 56 */,
+/* 57 */,
+/* 58 */,
+/* 59 */,
+/* 60 */,
+/* 61 */,
+/* 62 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+
+    data: function data() {
+        return {
+
+            successDisp: false,
+            failedDisp: false,
+
+            shiftStart: '',
+            shiftEnd: '',
+            startTime: '',
+            endTime: '',
+            empID: '',
+
+            list: [],
+            employees: {
+                empID: '',
+                firstName: '',
+                lastName: ''
+            }
+        };
+    },
+
+    mounted: function mounted() {
+        this.getEmployees();
+        this.successDisp = false;
+        this.failedDisp = false;
+    },
+
+
+    methods: {
+        getEmployees: function getEmployees() {
+            var _this = this;
+
+            axios.get('/employee').then(function (response) {
+                _this.list = response.data;
+            });
+        },
+        addEmp: function addEmp() {
+
+            axios.post('/shift', {
+                shiftStart: this.shiftStart,
+                shiftEnd: this.shiftEnd,
+                startTime: this.startTime,
+                endTime: this.endTime,
+                empID: this.empID
+            }).then(function (response) {
+                console.log(response);
+                this.successDisp = true;
+                this.failedDisp = false;
+                this.clearInputs();
+            }.bind(this)).catch(function (error) {
+                console.log('error');
+                console.log(error);
+                this.successDisp = false;
+                this.failedDisp = true;
+            }.bind(this));
+        },
+        clearInputs: function clearInputs() {
+            this.shiftStart = '';
+            this.shiftEnd = '';
+            this.startTime = '';
+            this.endTime = '';
+            this.empID = '';
+        }
+    }
+});
+
+/***/ }),
+/* 63 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(2)();
+exports.push([module.i, "\n#addPanel {\n    display: -ms-grid;\n    display: grid;\n}\n#addPanel input {\n    /*flex: 1 auto;*/\n    /*width: 40%;*/\n    margin-bottom: 10px;\n}\n#adding {\n    margin-top: 25px;\n}\n.input-section {\n    width: 40%;\n    /*position: absolute;*/\n}\n#bottom {\n}\n#righty {\n    margin-left: 50%;\n}\n::-webkit-input-placeholder {\n    font-style: italic;\n    color: #A7A7A7;\n}\n::-moz-placeholder {\n    font-style: italic;\n    color: #A7A7A7;\n}\n:-ms-input-placeholder {\n    font-style: italic;\n    color: #A7A7A7;\n}\ninput:-moz-placeholder {\n    font-style: italic;\n    color: #A7A7A7;\n}\n", ""]);
+
+/***/ }),
+/* 64 */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+/* styles */
+__webpack_require__(66)
+
+var Component = __webpack_require__(4)(
+  /* script */
+  __webpack_require__(62),
+  /* template */
+  __webpack_require__(65),
+  /* scopeId */
+  null,
+  /* cssModules */
+  null
+)
+Component.options.__file = "/Users/richard/Documents/Shift-API/resources/assets/js/components/Shift.vue"
+if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
+if (Component.options.functional) {console.error("[vue-loader] Shift.vue: functional components are not supported with templates, they should use render functions.")}
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-71923c5b", Component.options)
+  } else {
+    hotAPI.reload("data-v-71923c5b", Component.options)
+  }
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 65 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticClass: "container"
+  }, [_c('div', {
+    staticClass: "col-md-12"
+  }, [_c('h2', [_vm._v("Add a Shift")]), _vm._v(" "), _c('div', {
+    staticClass: "col-md-7"
+  }, [_c('div', {
+    staticClass: "panel panel-default"
+  }, [_c('div', {
+    staticClass: "panel-body",
+    attrs: {
+      "id": "addPanel"
+    }
+  }, [(_vm.successDisp) ? _c('div', {
+    staticClass: "alert alert-success"
+  }, [_c('span', {
+    staticClass: "glyphicon glyphicon-ok",
+    attrs: {
+      "aria-hidden": "true"
+    }
+  }), _vm._v(" Successfully added Shift!\n                  ")]) : _vm._e(), _vm._v(" "), (_vm.failedDisp) ? _c('div', {
+    staticClass: "alert alert-danger"
+  }, [_c('span', {
+    staticClass: "glyphicon glyphicon-exclamation-sign",
+    attrs: {
+      "aria-hidden": "true"
+    }
+  }), _vm._v(" There was an error adding the shift, please revise...\n                  ")]) : _vm._e(), _vm._v(" "), _c('table', [_vm._m(0), _vm._v(" "), _c('tbody', [_vm._m(1), _vm._v(" "), _c('tr', [_c('td', [_c('input', {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: (_vm.shiftStart),
+      expression: "shiftStart"
+    }],
+    attrs: {
+      "type": "date"
+    },
+    domProps: {
+      "value": (_vm.shiftStart)
+    },
+    on: {
+      "input": function($event) {
+        if ($event.target.composing) { return; }
+        _vm.shiftStart = $event.target.value
+      }
+    }
+  })]), _vm._v(" "), _c('td', [_c('input', {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: (_vm.shiftEnd),
+      expression: "shiftEnd"
+    }],
+    attrs: {
+      "type": "date"
+    },
+    domProps: {
+      "value": (_vm.shiftEnd)
+    },
+    on: {
+      "input": function($event) {
+        if ($event.target.composing) { return; }
+        _vm.shiftEnd = $event.target.value
+      }
+    }
+  })])]), _vm._v(" "), _vm._m(2), _vm._v(" "), _c('tr', [_c('td', [_c('input', {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: (_vm.startTime),
+      expression: "startTime"
+    }],
+    attrs: {
+      "type": "time"
+    },
+    domProps: {
+      "value": (_vm.startTime)
+    },
+    on: {
+      "input": function($event) {
+        if ($event.target.composing) { return; }
+        _vm.startTime = $event.target.value
+      }
+    }
+  })]), _vm._v(" "), _c('td', [_c('input', {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: (_vm.endTime),
+      expression: "endTime"
+    }],
+    attrs: {
+      "type": "time"
+    },
+    domProps: {
+      "value": (_vm.endTime)
+    },
+    on: {
+      "input": function($event) {
+        if ($event.target.composing) { return; }
+        _vm.endTime = $event.target.value
+      }
+    }
+  })])])])]), _vm._v(" "), _c('h4', [_vm._v("Employee ID")]), _vm._v(" "), _c('input', {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: (_vm.empID),
+      expression: "empID"
+    }],
+    attrs: {
+      "type": "text",
+      "placeholder": "Enter in Employee ID..."
+    },
+    domProps: {
+      "value": (_vm.empID)
+    },
+    on: {
+      "input": function($event) {
+        if ($event.target.composing) { return; }
+        _vm.empID = $event.target.value
+      }
+    }
+  }), _vm._v(" "), _c('button', {
+    staticClass: "btn btn-primary",
+    attrs: {
+      "id": "adding"
+    },
+    on: {
+      "click": _vm.addEmp
+    }
+  }, [_c('span', {
+    staticClass: "glyphicon glyphicon-plus",
+    attrs: {
+      "aria-hidden": "true"
+    }
+  }), _vm._v(" Add Shift\n                  ")])])])]), _vm._v(" "), _c('div', {
+    staticClass: "col-md-5"
+  }, [_c('table', {
+    staticClass: "table table-hover panel panel-default"
+  }, [_vm._m(3), _vm._v(" "), _c('tbody', {
+    staticClass: "panel-body"
+  }, _vm._l((_vm.list), function(emp) {
+    return _c('tr', [_c('td', [_vm._v(" " + _vm._s(emp.empID) + " ")]), _vm._v(" "), _c('td', [_vm._v(" " + _vm._s(emp.firstName) + " ")]), _vm._v(" "), _c('td', [_vm._v(" " + _vm._s(emp.lastName) + " ")])])
+  }))])])])])
+},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('thead', [_c('tr', [_c('td', {
+    staticClass: "col-md-3"
+  }), _vm._v(" "), _c('td', {
+    staticClass: "col-md-3"
+  })])])
+},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('tr', [_c('td', [_c('h4', [_vm._v("Start Date")])]), _vm._v(" "), _c('td', [_c('h4', [_vm._v("End Date")])])])
+},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('tr', [_c('td', [_c('h4', [_vm._v("Start Time")])]), _vm._v(" "), _c('td', [_c('h4', [_vm._v("End Time")])])])
+},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('thead', {
+    staticClass: "panel-heading"
+  }, [_c('tr', [_c('th', {
+    staticClass: "col-sm-2"
+  }, [_vm._v("Employee ID")]), _vm._v(" "), _c('th', {
+    staticClass: "col-sm-3"
+  }, [_vm._v("First Name")]), _vm._v(" "), _c('th', {
+    staticClass: "col-sm-3"
+  }, [_vm._v("Last Name")])])])
+}]}
+module.exports.render._withStripped = true
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+     require("vue-hot-reload-api").rerender("data-v-71923c5b", module.exports)
+  }
+}
+
+/***/ }),
+/* 66 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(63);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__(5)("5f2fbd39", content, false);
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-71923c5b!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Shift.vue", function() {
+     var newContent = require("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-71923c5b!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Shift.vue");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
 
 /***/ })
 /******/ ]);

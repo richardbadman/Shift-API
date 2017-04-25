@@ -37,7 +37,15 @@ class ShiftController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $shift = new Shift;
+        $shift->shiftStart  = $request->shiftStart;
+        $shift->shiftEnd    = $request->shiftEnd;
+        $shift->startTime   = $request->startTime;
+        $shift->endTime     = $request->endTime;
+        $shift->empID       = $request->empID;
+        $shift->save();
+
+        return 'Saved';
     }
 
     /**

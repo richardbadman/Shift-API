@@ -26,10 +26,11 @@
         <nav class="navbar navbar-default">
             <div class="container-fluid">
                 <div class="navbar-header">
-                    <a class="navbar-brand" href="">Employee Shift table</a>
+                    <span class="navbar-brand" href="">Employee Shift table</span>
                     <div class="navbar-nav">
                         <span id="currPage" class="nav-item active custNavItem">Home</span>
                         <a class="nav-item nav-link custNavItem" href="add">Add Employee</a>
+                        <a class="nav-item nav-link custNavItem" href="addShift">Add Shift</a>
                         <a class="nav-item nav-link custNavItem" href="week">Weekly plan</a>
                     </div>
                 </div>
@@ -48,8 +49,6 @@
                 <a href="add"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Add Employee</a>
             </button>
         </div>
-
-
 
         <emptable></emptable>
 
