@@ -28,10 +28,37 @@
                 <div class="navbar-header">
                     <span class="navbar-brand" href="">Employee Shift table</span>
                     <div class="navbar-nav">
-                        <a class="nav-item nav-link custNavItem" href="/">Home</a>
+                        <a class="nav-item nav-link custNavItem" href="home">Home</a>
                         <a class="nav-item nav-link custNavItem" href="add">Add Employee</a>
                         <a class="nav-item nav-link custNavItem" href="addShift">Add Shift</a>
                         <span id="currPage" class="nav-item active custNavItem">Weekly plan</span>
+                        <ul class="nav navbar-nav navbar-right">
+                        <!-- Authentication Links -->
+                        @if (Auth::guest())
+                            <li><a href="{{ url('/login') }}">Login</a></li>
+                            <li><a href="{{ url('/register') }}">Register</a></li>
+                        @else
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                                    {{ Auth::user()->name }} <span class="caret"></span>
+                                </a>
+
+                                <ul class="dropdown-menu" role="menu">
+                                    <li>
+                                        <a href="{{ url('/logout') }}"
+                                            onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                            Logout
+                                        </a>
+
+                                        <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
+                                            {{ csrf_field() }}
+                                        </form>
+                                    </li>
+                                </ul>
+                            </li>
+                        @endif
+                        </ul>
                     </div>
                 </div>
             </div>
@@ -43,7 +70,6 @@
 
     </div>
 
-    {{--<script src="{{ asset('js/app.js') }}"></script>--}}
     <script>
         function getMonday(d) {
             d = new Date(d);
@@ -56,6 +82,7 @@
         var format = now.toISOString().slice(0, 10);
         document.getElementById("weekHeading").innerHTML = "Week Commencing: " + format;
     </script>
+
     <script src="js/app.js" charset="utf-8"></script>
 </body>
 </html>

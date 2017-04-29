@@ -15,6 +15,6 @@ class Employee extends Model
     ];
 
     public function shifts() {
-        return $this->hasMany(Shift::class);
+        return $this->hasMany('App\Shift', 'empID');
     }
 }

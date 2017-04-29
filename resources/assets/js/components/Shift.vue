@@ -111,8 +111,8 @@ export default {
 
     mounted() {
         this.getEmployees();
-        this.successDisp = false;
-        this.failedDisp = false;
+        // this.successDisp = false;
+        // this.failedDisp = false;
     },
 
     methods: {

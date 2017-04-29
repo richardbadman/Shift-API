@@ -16,6 +16,6 @@ class Shift extends Model
 
     public function employee()
     {
-        $this->belongsTo(Employee::class);
+        $this->belongsTo('App\Employee');
     }
 }

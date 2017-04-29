@@ -10,22 +10,30 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+//['prefix' => 'api', 'middleware' => 'throttle']
+Route::group(['middleware' => ['GrahamCampbell\Throttle\Http\Middleware\ThrottleMiddleware:50,30', 'auth']], function() {
+    Route::get('/home', function () {
+        return view('main');
+    });
 
-Route::get('/', function () {
-    return view('main');
+    Route::get('week', function() {
+        return view('week');
+    });
 });
 
-Route::get('add', function() {
-    return view('add');
-});
+Route::group(['middleware' => ['GrahamCampbell\Throttle\Http\Middleware\ThrottleMiddleware:25,30', 'auth']], function() {
+    Route::get('add', function() {
+        return view('add');
+    });
 
-Route::get('week', function() {
-    return view('week');
-});
-
-Route::get('addShift', function() {
-  return view('shift');
+    Route::get('addShift', function() {
+      return view('shift');
+  });
 });
 
 Route::resource('employee', 'EmployeeController');
 Route::resource('shift', 'ShiftController');
+
+Auth::routes();
+
+Route::get('/', 'HomeController@index');

@@ -4,12 +4,18 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Employee;
+use App\Shift;
 use App\Http\Requests;
-use Validator, Reponse;
+use Validator;
+use App\Http\Reponse;
 use Illuminate\Support\Facades\Input;
 
 class EmployeeController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -17,9 +23,7 @@ class EmployeeController extends Controller
      */
     public function index()
     {
-        //
-        $data = Employee::all();
-        return $data;
+        return Employee::orderBy('empID')->get();
     }
 
     /**
@@ -57,8 +61,7 @@ class EmployeeController extends Controller
      */
     public function show($id)
     {
-        //
-        return 'test';
+        return \Response::json(Employee::with('shifts')->find($id));
     }
 
     /**
@@ -81,7 +84,12 @@ class EmployeeController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $employee = Employee::findOrFail($request->empID);
+        $employee->firstName = $request->firstName;
+        $employee->lastName = $request->lastName;
+        $employee->save();
+
+        return 'Updated';
     }
 
     /**

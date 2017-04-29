@@ -47,8 +47,8 @@ export default {
 
         mounted() {
             //reset when page is refreshed/loaded
-            this.successDisp = false;
-            this.failedDisp = false;
+            // this.successDisp = false;
+            // this.failedDisp = false;
         },
 
         addEmp() {

@@ -1,3 +1,9 @@
+ul.nav.navbar-nav.navbar-right {
+    right: 100px;
+    position: absolute;
+    top: 0px;
+}
+
 #mainContainer {
     margin-top: 50px;
     display: flex;
