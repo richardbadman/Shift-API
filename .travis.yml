@@ -1,0 +1,5 @@
+language: php
+services:
+  - docker
+script:
+  - bash run.sh
