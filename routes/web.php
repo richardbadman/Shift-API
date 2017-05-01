@@ -10,7 +10,12 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-//['prefix' => 'api', 'middleware' => 'throttle']
+
+
+Auth::routes();
+
+Route::get('/', 'HomeController@index');
+
 Route::group(['middleware' => ['GrahamCampbell\Throttle\Http\Middleware\ThrottleMiddleware:50,30', 'auth']], function() {
     Route::get('/home', function () {
         return view('main');
@@ -33,7 +38,3 @@ Route::group(['middleware' => ['GrahamCampbell\Throttle\Http\Middleware\Throttle
 
 Route::resource('employee', 'EmployeeController');
 Route::resource('shift', 'ShiftController');
-
-Auth::routes();
-
-Route::get('/', 'HomeController@index');
