@@ -1,5 +1,9 @@
-language: bash
+language: php
+
 services:
   - docker
-script:
-  - bash run.sh
+
+before_install:
+  - docker run --rm --name shifty-pgsql -d postgres
+  - docker build -t shifty . 
+  - docker run -t -i -p 8080:8080 --rm --name shifty --link shifty-pgsql:shifty-pgsql shifty
