@@ -1,36 +1,33 @@
-<p align="center"><img src="https://laravel.com/assets/img/components/logo-laravel.svg">
-Employee Shift web application</p>
-
-Build Status to go here
+#Employee Shift web application
 
 ## About Shift-API
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable, creative experience to be truly fulfilling. Laravel attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as:
+A simple web application designed to store Employee's and any shift's they are assigned.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## Running the application
+**Pre-requisites:**
+> Docker
 
-Laravel is accessible, yet powerful, providing tools needed for large, robust applications. A superb combination of simplicity, elegance, and innovation give you tools you need to build any application with which you are tasked.
+Running the application is an easy process, providing Docker is installed on your machine and is running. In a terminal application type the following:
+```
+./run.sh
+```
 
-## Learning Laravel
+The application will run a postgres container, and build the application and run it on another. The application will take approximately 5 minutes to build. So sit back and relax and have a beer :beer:.
 
-Laravel has the most extensive and thorough documentation and video tutorial library of any modern web application framework. The [Laravel documentation](https://laravel.com/docs) is thorough, complete, and makes it a breeze to get started learning the framework.
+Once the application has built, it can be viewed via http://localhost:8080/
 
-If you're not in the mood to read, [Laracasts](https://laracasts.com) contains over 900 video tutorials on a range of topics including Laravel, modern PHP, unit testing, JavaScript, and more. Boost the skill level of yourself and your entire team by digging into our comprehensive video library.
+Due to the authentication of the application, you are required to register / login to use it.
 
-## Contributing
+## Rate Limiting
+This application features API Rate limits, to prevent any possible overloads. This is currently set to; 50 calls per 30 minutes, with the exception of 25 calls per 30 minutes for any requests that update / post data.
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](http://laravel.com/docs/contributions).
+## ToDo
 
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell at taylor@laravel.com. All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT).
+- ~~[ ] HATEOAS compliant
+> - [x] RESTful compliant
+- [x] Persistant data
+- [x] HTML/JS Front end
+- [x] Authentication
+- [x] API Rate Limiting
+- [x] Docker setup
