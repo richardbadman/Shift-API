@@ -3,7 +3,7 @@ FROM ubuntu
 #Generic installaion
 RUN apt-get update -y
 RUN apt-get upgrade -y
-RUN apt-get install -y nginx curl nodejs npm sudo build-essential screen nano dos2unix htop git
+RUN apt-get install -y nginx curl nodejs npm sudo build-essential screen nano dos2unix htop git zip unzip
 
 #Add User so composer doesnt scream at you
 #RUN useradd -m -U basic -G www-data -s /bin/bash
