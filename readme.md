@@ -24,8 +24,8 @@ This application features API Rate limits, to prevent any possible overloads. Th
 
 ## ToDo
 
-- ~~[ ] HATEOAS compliant
-> - [x] RESTful compliant
+- ~~[ ] HATEOAS compliant~~
+- [x] RESTful compliant
 - [x] Persistant data
 - [x] HTML/JS Front end
 - [x] Authentication
