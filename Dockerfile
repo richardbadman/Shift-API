@@ -10,7 +10,7 @@ RUN apt-get install -y nginx curl nodejs npm sudo build-essential screen nano do
 
 #Get PhP
 RUN apt-get install -y php7.0 php7.0-curl php7.0-pgsql php7.0-fpm php7.0-mbstring php7.0-mcrypt php7.0-dom
-COPY php.ini /etc/php/7.0/cli
+#COPY php.ini /etc/php/7.0/cli
 
 RUN wget https://phar.phpunit.de/phpunit.phar
 RUN chmod +x phpunit.phar
