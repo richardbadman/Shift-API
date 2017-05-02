@@ -7,7 +7,7 @@ docker rm shifty-pgsql
 docker rm shifty
 
 echo "${CYAN}Running Postgres container${NC}"
-docker run --name shifty-pgsql -d postgres
+docker run --rm --name shifty-pgsql -d postgres
 
 echo "${CYAN}Building shifty container, this can take a while${NC}"
 docker build -t shifty .
