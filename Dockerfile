@@ -6,7 +6,7 @@ RUN apt-get upgrade -y
 RUN apt-get install -y nginx curl nodejs npm sudo build-essential screen nano dos2unix htop git zip unzip wget
 
 #Add User so composer doesnt scream at you
-#RUN useradd -m -U basic -G www-data -s /bin/bash
+RUN useradd -m -U basic -G www-data -s /bin/bash
 
 #Get PhP
 RUN apt-get install -y php7.0 php7.0-curl php7.0-pgsql php7.0-fpm php7.0-mbstring php7.0-mcrypt php7.0-dom
@@ -24,11 +24,12 @@ RUN apt-get install -y nodejs
 #Get Composer
 RUN curl -sS https://getcomposer.org/installer | php
 RUN mv composer.phar /usr/bin/composer
+RUN chmod +x /usr/bin/composer
 
 #Copy root and execute commands
 COPY ./ /var/www/html/Shift-API
 
-#RUN chown -R basic:www-data /var/www
+RUN chown -R basic:www-data /var/www
 #RUN cd /var/www/Shift-API 
 
 RUN cd /var/www/html/Shift-API && composer install 
