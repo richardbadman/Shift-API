@@ -35,5 +35,5 @@ RUN chown -R basic:www-data /var/www
 RUN cd /var/www/html/Shift-API && composer install 
 RUN cd /var/www/html/Shift-API && npm install
 
-RUN dos2unix /var/www/html/Shift-API/start.sh
-CMD bash /var/www/html/Shift-API/start.sh && htop
+#RUN dos2unix /var/www/html/Shift-API/start.sh
+#CMD bash /var/www/html/Shift-API/start.sh && htop
