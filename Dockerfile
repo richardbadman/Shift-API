@@ -34,6 +34,7 @@ COPY ./ /var/www/html/Shift-API
 
 RUN cd /var/www/html/Shift-API && composer install 
 RUN cd /var/www/html/Shift-API && npm install
+RUN cd /var/www/html/Shift-API && npm install moment
 
 RUN dos2unix /var/www/html/Shift-API/start.sh
 CMD bash /var/www/html/Shift-API/start.sh && htop
