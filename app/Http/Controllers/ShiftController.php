@@ -66,11 +66,8 @@ class ShiftController extends Controller
 
     public function weekly($date)
     {
-        // $monday = date('d.m.Y', strtotime('monday this week'));
-        // $friday = date('d.m.Y', strtotime('friday this week'));
         $shifts = Shift::with('employee');
         $shifts = $shifts->where('shiftStart', '=', $date)->get();
-                    // ->where('shiftEnd', '<=', $friday)->get();
 
         return $shifts;
     }
