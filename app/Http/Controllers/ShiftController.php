@@ -4,13 +4,14 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Shift;
+use App\Employee;
 
 class ShiftController extends Controller
 {
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
+    // public function __construct()
+    // {
+    //     $this->middleware('auth');
+    // }
     /**
      * Display a listing of the resource.
      *
@@ -63,6 +64,17 @@ class ShiftController extends Controller
         //
     }
 
+    public function weekly($date)
+    {
+        // $monday = date('d.m.Y', strtotime('monday this week'));
+        // $friday = date('d.m.Y', strtotime('friday this week'));
+        $shifts = Shift::with('employee');
+        $shifts = $shifts->where('shiftStart', '=', $date)->get();
+                    // ->where('shiftEnd', '<=', $friday)->get();
+
+        return $shifts;
+    }
+
     /**
      * Show the form for editing the specified resource.
      *
@@ -95,5 +107,9 @@ class ShiftController extends Controller
     public function destroy($id)
     {
         //
+        $shift = Shift::findOrFail($id);
+        $shift->delete();
+
+        return 'Deleted';
     }
 }

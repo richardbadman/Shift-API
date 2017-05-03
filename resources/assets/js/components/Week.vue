@@ -12,9 +12,12 @@
                     </tr>
                 </thead>
                 <tbody class="panel-body">
-                    <tr>
+                    <tr v-for="shift in shifts_1">
                         <td>
-                            Test
+                            {{ shift.employee.firstName }}
+                            {{ shift.employee.lastName }} <br>
+                            {{ shift.startTime }} ~
+                            {{ shift.endTime }}
                         </td>
                     </tr>
                 </tbody>
@@ -31,7 +34,13 @@
                     </tr>
                 </thead>
                 <tbody class="panel-body">
-                    <tr>
+                    <tr v-for="shift in shifts_2">
+                        <td>
+                            {{ shift.employee.firstName }}
+                            {{ shift.employee.lastName }} <br>
+                            {{ shift.startTime }} ~
+                            {{ shift.endTime }}
+                        </td>
                     </tr>
                 </tbody>
             </table>
@@ -47,7 +56,13 @@
                     </tr>
                 </thead>
                 <tbody class="panel-body">
-                    <tr>
+                    <tr v-for="shift in shifts_3">
+                        <td>
+                            {{ shift.employee.firstName }}
+                            {{ shift.employee.lastName }} <br>
+                            {{ shift.startTime }} ~
+                            {{ shift.endTime }}
+                        </td>
                     </tr>
                 </tbody>
             </table>
@@ -63,7 +78,13 @@
                     </tr>
                 </thead>
                 <tbody class="panel-body">
-                    <tr>
+                    <tr v-for="shift in shifts_4">
+                        <td>
+                            {{ shift.employee.firstName }}
+                            {{ shift.employee.lastName }} <br>
+                            {{ shift.startTime }} ~
+                            {{ shift.endTime }}
+                        </td>
                     </tr>
                 </tbody>
             </table>
@@ -79,7 +100,13 @@
                     </tr>
                 </thead>
                 <tbody class="panel-body">
-                    <tr>
+                    <tr v-for="shift in shifts_5">
+                        <td>
+                            {{ shift.employee.firstName }}
+                            {{ shift.employee.lastName }} <br>
+                            {{ shift.startTime }} ~
+                            {{ shift.endTime }}
+                        </td>
                     </tr>
                 </tbody>
             </table>
@@ -97,16 +124,40 @@ export default {
     data: function() {
         return {
             edit: false,
-            list: [],
-            employees: {
-                empID: '',
-                firstName: '',
-                lastName: '',
-            }
+            dates: {},
+            shifts_1: {},
+            shifts_2: {},
+            shifts_3: {},
+            shifts_4: {},
+            shifts_5: {},
         };
     },
 
+    mounted() {
+        axios.get('/date').then( response => {
+            this.dates = response.data;
+            this.getWeek();
+        });
+    },
+
     methods: {
+        getWeek() {
+            axios.get('/weekly/' + this.dates['monday']).then( response => {
+                this.shifts_1 = response.data;
+            });
+            axios.get('/weekly/' + this.dates['tuesday']).then( response => {
+                this.shifts_2 = response.data;
+            });
+            axios.get('/weekly/' + this.dates['wednesday']).then( response => {
+                this.shifts_3 = response.data;
+            });
+            axios.get('/weekly/' + this.dates['thursday']).then( response => {
+                this.shifts_4 = response.data;
+            });
+            axios.get('/weekly/' + this.dates['friday']).then( response => {
+                this.shifts_5 = response.data;
+            });
+        }
 
     }
 }

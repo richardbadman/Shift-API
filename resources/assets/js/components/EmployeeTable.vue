@@ -18,6 +18,7 @@
                                 <th>Shift Start Time</th>
                                 <th>Shift End Date</th>
                                 <th>Shift End Time</th>
+                                <th></th>
                             </tr>
                         </thead>
                         <tbody class="panel-body">
@@ -28,6 +29,9 @@
                                 <td>{{ shift.startTime }}</td>
                                 <td>{{ moment(shift.shiftEnd, "YYYY-MM-DD").format("ll") }}</td>
                                 <td>{{ shift.endTime }}</td>
+                                <td><button class="btn btn-danger" @click="delShift(shift.shiftID, details.empID)">
+                                    <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                                </button></td>
                             </tr>
                         </tbody>
                     </table>
@@ -111,7 +115,6 @@ export default {
                     empID: '',
                     firstName: '',
                     lastName: '',
-                    showSection: false,
                 }
         };
     },
@@ -193,6 +196,14 @@ export default {
             this.successDisp = false
             this.failedDisp = false
             this.showEdit = false
+        },
+
+        delShift(shiftID, empID) {
+            axios.delete('/shift/' + shiftID).then( response => {
+                console.log(response.data);
+            });
+
+            this.gotoEmp(empID);
         }
     }
 }

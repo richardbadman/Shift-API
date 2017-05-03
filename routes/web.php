@@ -24,6 +24,7 @@ Route::group(['middleware' => ['GrahamCampbell\Throttle\Http\Middleware\Throttle
     Route::get('week', function() {
         return view('week');
     });
+
 });
 
 Route::group(['middleware' => ['GrahamCampbell\Throttle\Http\Middleware\ThrottleMiddleware:25,30', 'auth']], function() {
@@ -34,6 +35,28 @@ Route::group(['middleware' => ['GrahamCampbell\Throttle\Http\Middleware\Throttle
     Route::get('addShift', function() {
       return view('shift');
   });
+});
+
+Route::get('weekly/{date}', 'ShiftController@weekly');
+
+Route::get('date', function() {
+
+    $monday = date('d.m.Y', strtotime('monday this week'));
+    $tuesday = date('d.m.Y', strtotime('tuesday this week'));
+    $wednesday = date('d.m.Y', strtotime('wednesday this week'));
+    $thursday = date('d.m.Y', strtotime('thursday this week'));
+    $friday = date('d.m.Y', strtotime('friday this week'));
+
+    $response = [
+        "monday" => $monday,
+        "tuesday" => $tuesday,
+        "wednesday" => $wednesday,
+        "thursday" => $thursday,
+        "friday" => $friday
+    ];
+
+    return $response;
+
 });
 
 Route::resource('employee', 'EmployeeController');

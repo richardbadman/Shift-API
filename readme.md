@@ -13,7 +13,7 @@ Running the application is an easy process, providing Docker is installed on you
 ./run.sh
 ```
 
-The application will run a postgres container, and build the application and run it on another. The application will take approximately 5 minutes to build. So sit back and relax and have a beer :beer:.
+The application will run a Postgres container, and build the application and run it on another. The application will take approximately 5 minutes to build. So sit back and relax and have a beer :beer:.
 
 Once the application has built, it can be viewed via http://localhost:8080/
 
@@ -31,3 +31,4 @@ This application features API Rate limits, to prevent any possible overloads. Th
 - [x] Authentication
 - [x] API Rate Limiting
 - [x] Docker setup
+- [x] Weekly planner

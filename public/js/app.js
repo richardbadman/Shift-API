@@ -28192,6 +28192,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
 
@@ -28209,8 +28213,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             employees: {
                 empID: '',
                 firstName: '',
-                lastName: '',
-                showSection: false
+                lastName: ''
             }
         };
     },
@@ -28280,6 +28283,13 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             this.successDisp = false;
             this.failedDisp = false;
             this.showEdit = false;
+        },
+        delShift: function delShift(shiftID, empID) {
+            axios.delete('/shift/' + shiftID).then(function (response) {
+                console.log(response.data);
+            });
+
+            this.gotoEmp(empID);
         }
     }
 });
@@ -28545,22 +28555,79 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
 
     data: function data() {
         return {
             edit: false,
-            list: [],
-            employees: {
-                empID: '',
-                firstName: '',
-                lastName: ''
-            }
+            dates: {},
+            shifts_1: {},
+            shifts_2: {},
+            shifts_3: {},
+            shifts_4: {},
+            shifts_5: {}
         };
     },
 
-    methods: {}
+    mounted: function mounted() {
+        var _this = this;
+
+        axios.get('/date').then(function (response) {
+            _this.dates = response.data;
+            _this.getWeek();
+        });
+    },
+
+
+    methods: {
+        getWeek: function getWeek() {
+            var _this2 = this;
+
+            axios.get('/weekly/' + this.dates['monday']).then(function (response) {
+                _this2.shifts_1 = response.data;
+            });
+            axios.get('/weekly/' + this.dates['tuesday']).then(function (response) {
+                _this2.shifts_2 = response.data;
+            });
+            axios.get('/weekly/' + this.dates['wednesday']).then(function (response) {
+                _this2.shifts_3 = response.data;
+            });
+            axios.get('/weekly/' + this.dates['thursday']).then(function (response) {
+                _this2.shifts_4 = response.data;
+            });
+            axios.get('/weekly/' + this.dates['friday']).then(function (response) {
+                _this2.shifts_5 = response.data;
+            });
+        }
+    }
 });
 
 /***/ }),
@@ -31026,7 +31093,7 @@ exports.push([module.i, "\n#addPanel {\n    display: -ms-grid;\n    display: gri
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(2)();
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 /***/ }),
 /* 160 */
@@ -48549,7 +48616,19 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, [_vm._m(0), _vm._v(" "), _c('tbody', {
     staticClass: "panel-body"
   }, _vm._l((_vm.details.shifts), function(shift) {
-    return _c('tr', [_c('td', [_vm._v(_vm._s(shift.shiftID))]), _vm._v(" "), _c('td', [_vm._v(_vm._s(_vm.moment(shift.shiftStart, "YYYY-MM-DD").format("ll")))]), _vm._v(" "), _c('td', [_vm._v(_vm._s(shift.startTime))]), _vm._v(" "), _c('td', [_vm._v(_vm._s(_vm.moment(shift.shiftEnd, "YYYY-MM-DD").format("ll")))]), _vm._v(" "), _c('td', [_vm._v(_vm._s(shift.endTime))])])
+    return _c('tr', [_c('td', [_vm._v(_vm._s(shift.shiftID))]), _vm._v(" "), _c('td', [_vm._v(_vm._s(_vm.moment(shift.shiftStart, "YYYY-MM-DD").format("ll")))]), _vm._v(" "), _c('td', [_vm._v(_vm._s(shift.startTime))]), _vm._v(" "), _c('td', [_vm._v(_vm._s(_vm.moment(shift.shiftEnd, "YYYY-MM-DD").format("ll")))]), _vm._v(" "), _c('td', [_vm._v(_vm._s(shift.endTime))]), _vm._v(" "), _c('td', [_c('button', {
+      staticClass: "btn btn-danger",
+      on: {
+        "click": function($event) {
+          _vm.delShift(shift.shiftID, _vm.details.empID)
+        }
+      }
+    }, [_c('span', {
+      staticClass: "glyphicon glyphicon-remove",
+      attrs: {
+        "aria-hidden": "true"
+      }
+    })])])])
   }))])])]) : _vm._e(), _vm._v(" "), (_vm.showEdit) ? _c('div', {
     staticClass: "panel panel-default"
   }, [_c('div', {
@@ -48696,7 +48775,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
 },staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('thead', {
     staticClass: "panel-heading"
-  }, [_c('tr', [_c('th', [_vm._v("Shift ID")]), _vm._v(" "), _c('th', [_vm._v("Shift Start Date")]), _vm._v(" "), _c('th', [_vm._v("Shift Start Time")]), _vm._v(" "), _c('th', [_vm._v("Shift End Date")]), _vm._v(" "), _c('th', [_vm._v("Shift End Time")])])])
+  }, [_c('tr', [_c('th', [_vm._v("Shift ID")]), _vm._v(" "), _c('th', [_vm._v("Shift Start Date")]), _vm._v(" "), _c('th', [_vm._v("Shift Start Time")]), _vm._v(" "), _c('th', [_vm._v("Shift End Date")]), _vm._v(" "), _c('th', [_vm._v("Shift End Time")]), _vm._v(" "), _c('th')])])
 },function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('thead', {
     staticClass: "panel-heading"
@@ -48997,8 +49076,6 @@ if (false) {
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _vm._m(0)
-},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
     staticClass: "container"
   }, [_c('div', {
@@ -49007,53 +49084,73 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "col-md-2"
   }, [_c('table', {
     staticClass: "table table-hover panel panel-default"
-  }, [_c('thead', {
-    staticClass: "panel-heading"
-  }, [_c('tr', [_c('th', {
-    staticClass: "col-sm-3"
-  }, [_vm._v("Monday")])])]), _vm._v(" "), _c('tbody', {
+  }, [_vm._m(0), _vm._v(" "), _c('tbody', {
     staticClass: "panel-body"
-  }, [_c('tr', [_c('td', [_vm._v("\n                        Test\n                    ")])])])])]), _vm._v(" "), _c('div', {
+  }, _vm._l((_vm.shifts_1), function(shift) {
+    return _c('tr', [_c('td', [_vm._v("\n                        " + _vm._s(shift.employee.firstName) + "\n                        " + _vm._s(shift.employee.lastName) + " "), _c('br'), _vm._v("\n                        " + _vm._s(shift.startTime) + " ~\n                        " + _vm._s(shift.endTime) + "\n                    ")])])
+  }))])]), _vm._v(" "), _c('div', {
     staticClass: "col-md-2"
   }, [_c('table', {
     staticClass: "table table-hover panel panel-default"
-  }, [_c('thead', {
-    staticClass: "panel-heading"
-  }, [_c('tr', [_c('th', {
-    staticClass: "col-sm-3"
-  }, [_vm._v("Tuesday")])])]), _vm._v(" "), _c('tbody', {
+  }, [_vm._m(1), _vm._v(" "), _c('tbody', {
     staticClass: "panel-body"
-  }, [_c('tr')])])]), _vm._v(" "), _c('div', {
+  }, _vm._l((_vm.shifts_2), function(shift) {
+    return _c('tr', [_c('td', [_vm._v("\n                        " + _vm._s(shift.employee.firstName) + "\n                        " + _vm._s(shift.employee.lastName) + " "), _c('br'), _vm._v("\n                        " + _vm._s(shift.startTime) + " ~\n                        " + _vm._s(shift.endTime) + "\n                    ")])])
+  }))])]), _vm._v(" "), _c('div', {
     staticClass: "col-md-2"
   }, [_c('table', {
     staticClass: "table table-hover panel panel-default"
-  }, [_c('thead', {
-    staticClass: "panel-heading"
-  }, [_c('tr', [_c('th', {
-    staticClass: "col-sm-3"
-  }, [_vm._v("Wednesday")])])]), _vm._v(" "), _c('tbody', {
+  }, [_vm._m(2), _vm._v(" "), _c('tbody', {
     staticClass: "panel-body"
-  }, [_c('tr')])])]), _vm._v(" "), _c('div', {
+  }, _vm._l((_vm.shifts_3), function(shift) {
+    return _c('tr', [_c('td', [_vm._v("\n                        " + _vm._s(shift.employee.firstName) + "\n                        " + _vm._s(shift.employee.lastName) + " "), _c('br'), _vm._v("\n                        " + _vm._s(shift.startTime) + " ~\n                        " + _vm._s(shift.endTime) + "\n                    ")])])
+  }))])]), _vm._v(" "), _c('div', {
     staticClass: "col-md-2"
   }, [_c('table', {
     staticClass: "table table-hover panel panel-default"
-  }, [_c('thead', {
-    staticClass: "panel-heading"
-  }, [_c('tr', [_c('th', {
-    staticClass: "col-sm-3"
-  }, [_vm._v("Thursday")])])]), _vm._v(" "), _c('tbody', {
+  }, [_vm._m(3), _vm._v(" "), _c('tbody', {
     staticClass: "panel-body"
-  }, [_c('tr')])])]), _vm._v(" "), _c('div', {
+  }, _vm._l((_vm.shifts_4), function(shift) {
+    return _c('tr', [_c('td', [_vm._v("\n                        " + _vm._s(shift.employee.firstName) + "\n                        " + _vm._s(shift.employee.lastName) + " "), _c('br'), _vm._v("\n                        " + _vm._s(shift.startTime) + " ~\n                        " + _vm._s(shift.endTime) + "\n                    ")])])
+  }))])]), _vm._v(" "), _c('div', {
     staticClass: "col-md-2"
   }, [_c('table', {
     staticClass: "table table-hover panel panel-default"
-  }, [_c('thead', {
+  }, [_vm._m(4), _vm._v(" "), _c('tbody', {
+    staticClass: "panel-body"
+  }, _vm._l((_vm.shifts_5), function(shift) {
+    return _c('tr', [_c('td', [_vm._v("\n                        " + _vm._s(shift.employee.firstName) + "\n                        " + _vm._s(shift.employee.lastName) + " "), _c('br'), _vm._v("\n                        " + _vm._s(shift.startTime) + " ~\n                        " + _vm._s(shift.endTime) + "\n                    ")])])
+  }))])])])])
+},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('thead', {
     staticClass: "panel-heading"
   }, [_c('tr', [_c('th', {
     staticClass: "col-sm-3"
-  }, [_vm._v("Friday")])])]), _vm._v(" "), _c('tbody', {
-    staticClass: "panel-body"
-  }, [_c('tr')])])])])])
+  }, [_vm._v("Monday")])])])
+},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('thead', {
+    staticClass: "panel-heading"
+  }, [_c('tr', [_c('th', {
+    staticClass: "col-sm-3"
+  }, [_vm._v("Tuesday")])])])
+},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('thead', {
+    staticClass: "panel-heading"
+  }, [_c('tr', [_c('th', {
+    staticClass: "col-sm-3"
+  }, [_vm._v("Wednesday")])])])
+},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('thead', {
+    staticClass: "panel-heading"
+  }, [_c('tr', [_c('th', {
+    staticClass: "col-sm-3"
+  }, [_vm._v("Thursday")])])])
+},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('thead', {
+    staticClass: "panel-heading"
+  }, [_c('tr', [_c('th', {
+    staticClass: "col-sm-3"
+  }, [_vm._v("Friday")])])])
 }]}
 module.exports.render._withStripped = true
 if (false) {
